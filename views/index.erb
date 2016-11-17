@@ -1,9 +1,18 @@
 <h1>Find and Replace</h1>
-<form action="/title">
+<form action="/find_and_replace_form">
   <div class="form-group">
-     <label for="title">What would you like to see in title case?
-</label>
-     <input id="title" name="title" class="form-control" type="text">
+     <label for="initial_str">Enter a sentence:</label>
+     <input id="initial_str" name="initial_str" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="replacee_str">Enter what to replace in the sentence:</label>
+    <input id="replacee_str" name="replacee_str" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+     <label for="replacer_str">Enter what to replace it with:</label>
+     <input id="replacer_str" name="replacer_str" class="form-control" type="text">
   </div>
   <button type="submit" class="btn-success">Send</button>
 </form>
+
+<h1><%= @final_output %></h1>

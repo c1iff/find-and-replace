@@ -63,7 +63,7 @@ define_method(:letter_replaces) do |array_of_indices, word, word2|
   counter = 0
   word2.each() do |letter|
     if counter < word.length
-      word.insert((array_of_indices[counter]).to_i, letter)
+      word.insert((array_of_indices[counter]), letter)
     else
       word.push(letter)
     end
