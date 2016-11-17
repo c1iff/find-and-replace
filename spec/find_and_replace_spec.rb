@@ -19,7 +19,7 @@ describe('String#find_and_replace') do
   end
 
   it("replaces a single word with capital letters another word in a sentence returns lowercase sentence ") do
-    expect(("hello planet").find_and_replace("Hello", "dog")).to(eq("dogo planet"))
+    expect(("hello planet").find_and_replace("Hell", "dog")).to(eq("dogo planet"))
   end
 
 end

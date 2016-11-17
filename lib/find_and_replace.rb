@@ -14,16 +14,11 @@ class String
       # word2 Word we're replacing word1 with
 
       search_result_array = letter_search(word, word1)
-      if search_result_array and counter < 1
-        puts "counter is: ", counter
+      puts "search_result_array: ", search_result_array
+      if search_result_array != []
         # word_array.slice(i)
-        final_word = letter_replaces(search_result_array, word, word2) # Correct
-        # puts "final_word: ", final_word # "dogo," - Correct, loop "godplanet" - Wrong
-        # print "print final_sentence before push: ", final_sentence # [] - Correct, and then ["dogo,"] 2nd loop
-        final_sentence.push(final_word) # Result should be: ["dogo,"]
-        # puts "final_sentence after push: ", final_sentence # dogo, loop godplanet - Wrong
-        # print "final_word: ", final_word
-        # word_array.insert(i, final_word)
+        final_word = letter_replaces(search_result_array, word, word2)
+        final_sentence.push(final_word)
         counter += 1
       else
         final_sentence.push(word.join(""))
@@ -67,10 +62,12 @@ define_method(:letter_replaces) do |array_of_indices, word, word2|
 
   counter = 0
   word2.each() do |letter|
-    word.insert((array_of_indices[counter]).to_i, letter)
+    if counter < word.length
+      word.insert((array_of_indices[counter]).to_i, letter)
+    else
+      word.push(letter)
+    end
     counter += 1
   end
   word.join("")
 end
-
-puts " LINE 70: ", "Hello, planet".find_and_replace("hell", "dog")
